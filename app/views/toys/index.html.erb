@@ -1,0 +1,68 @@
+<h1>Listing toys</h1>
+
+<%= form_tag toys_path, method: :get do %>
+ <p>
+    <%='query'%>
+    <%= text_field_tag :query, params[:query] %>
+  </p>
+  <p>
+    <%='category'%>
+    <%= text_field_tag :category, params[:category] %>
+  </p>
+
+  <p>
+     <%='brande'%>
+    <%= text_field_tag :brande, params[:brande] %>
+  </p>
+
+  <p>
+     <%='from age'%>
+    <%= text_field_tag :agel, params[:agel] %>
+     <%='to age'%>
+    <%= text_field_tag :ageh, params[:ageh] %>
+  </p>
+
+  <p>
+     <%='from price'%>
+    <%= text_field_tag :pricel, params[:pricel] %>
+      <%='to price'%>
+    <%= text_field_tag :priceh, params[:priceh] %>
+  </p>
+  
+  <p>
+    <%= submit_tag "Search", name: nil %>
+  </p>
+<% end %>
+
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Category</th>
+    <th>Brande</th>
+    <th>Inserted at</th>
+    <th>Child age</th>
+    <th>Price</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @toys.each do |toy| %>
+  <tr>
+    <td><%= toy.name %></td>
+    <td><%= toy.category %></td>
+    <td><%= toy.brande %></td>
+    <td><%= toy.inserted_at %></td>
+    <td><%= toy.child_age %></td>
+    <td><%= toy.price %></td>
+    <td><%= link_to 'Show', toy %></td>
+    <td><%= link_to 'Edit', edit_toy_path(toy) %></td>
+    <td><%= link_to 'Destroy', toy, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Toy', new_toy_path %>

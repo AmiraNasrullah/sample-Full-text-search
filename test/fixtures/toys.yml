@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  category: MyString
+  brande: MyString
+  inserted_at: 2013-06-23 16:01:41
+  child_age: 1
+  price: 1
+
+two:
+  name: MyString
+  category: MyString
+  brande: MyString
+  inserted_at: 2013-06-23 16:01:41
+  child_age: 1
+  price: 1

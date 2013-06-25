@@ -1,4 +1,4 @@
-Full-Test-Search
+Full-Text-Search
 
 
 Simple Toys listing app that uses Tire to interact with Elastic Search.

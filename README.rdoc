@@ -3,3 +3,33 @@ Full-Text-Search
 
 Simple Toys listing app that uses Tire to interact with Elastic Search.
 
+
+Notes 
+
+
+-to install elasticsearch : https://gist.github.com/wingdspur/2026107
+
+-elasticsearch documentation : http://www.elasticsearch.org/guide/
+
+-to understand filters : http://www.elasticsearch.org/blog/all-about-elasticsearch-filter-bitsets/
+
+-cache in elasticsearch : http://www.elasticsearch.org/guide/reference/index-modules/cache/
+
+-make sample app using tire gem : 
+$ rails new searchapp -m https://raw.github.com/karmi/tire/master/examples/rails-application-template.rb
+
+Steps : 
+
+* add "gem ‘tire’ " to the gem file 
+
+* add this two lines to the model class 
+ 		include Tire::Model::Search
+ 		include Tire::Model::Callbacks  to add  automatically into an index
+ 		
+* add mappings to the model, read about mappings in 
+		simple mappings :- http://euphonious-intuition.com/2012/07/an-introduction-to-mapping-in-elasticsearch/
+		complex mappings in :-http://euphonious-intuition.com/2012/08/more-complicated-mapping-in-elasticsearch/#.UT751tEvBk4
+
+* override search method in tire.
+
+
